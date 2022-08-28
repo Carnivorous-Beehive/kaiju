@@ -4,5 +4,5 @@
 (in-package :kaiju.web)
 
 (defroute root ("/" :method :get) ()
-  (with-application-layout
+  (with-application-layout (:title "Home - Kaiju")
     (:div "Kaiju")))
