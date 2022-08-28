@@ -4,6 +4,8 @@
   :description "An open source Jira and Confluence replacement"
   :license "Apache-2.0"
   :pathname "src/"
+  :depends-on ("hunchentoot"
+               "easy-routes")
   :components ((:file "main"))
   :in-order-to ((test-op (test-op :kaiju/test))))
 
