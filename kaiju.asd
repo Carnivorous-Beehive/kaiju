@@ -5,14 +5,9 @@
   :license "Apache-2.0"
   :pathname "src/"
   :depends-on ("hunchentoot"
-               "easy-routes")
-  :components ((:file "main"))
+               "easy-routes"
+               "cl-who")
+  :components ((:file "main" :depends-on ("web"))
+               (:file "web" :depends-on ("view"))
+               (:file "view"))
   :in-order-to ((test-op (test-op :kaiju/test))))
-
-(defsystem :kaiju/test
-  :author "Evan Duncan"
-  :license "Apache-2.0"
-  :pathname "tests/"
-  :depends-on (:kaiju :fiveam)
-  :components ((:file "main"))
-  :perform (test-op (o c) (symbol-call :5am :run! :it.bese.fiveam)))
